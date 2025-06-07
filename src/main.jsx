@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/Login.jsx';
 import TransactionsPage from './pages/Transactions.jsx';
 import TransactionDetails from './pages/TransactionDetails.jsx';
+import { ToastContainer } from 'react-toastify';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,5 +16,6 @@ createRoot(document.getElementById('root')).render(
         <Route path='/transactions/:id' element={<TransactionDetails />} />
       </Routes>
     </BrowserRouter>
+    <ToastContainer />
   </StrictMode>,
 )

@@ -1,20 +1,19 @@
 {
   "transactions": [
     {
-      "id": "1",
       "title": "Netflix",
       "price": 55.9,
-      "transactionType": "withdraw",
       "category": "Entretenimento",
-      "date": "17/05/2025"
+      "transactionType": "withdraw",
+      "date": "07/06/2025",
+      "id": "1"
     },
     {
-      "id": "5cce",
-      "title": "Salario",
-      "price": 12000,
-      "category": "Salario",
+      "title": "PAGAMENTO DAS FERIAS",
+      "price": 21000,
+      "category": "FINANCAS",
       "transactionType": "deposit",
-      "date": "17/05/2025"
+      "id": "5cce"
     },
     {
       "id": "fbea",
@@ -33,12 +32,12 @@
       "date": "17/05/2025"
     },
     {
-      "id": "8bca",
-      "title": "Café",
-      "price": 90,
+      "title": "Café em barras de ouro",
+      "price": 908,
       "category": "Alimentacao",
       "transactionType": "withdraw",
-      "date": "31/05/2025"
+      "date": "07/06/2025",
+      "id": "8bca"
     },
     {
       "id": "5b39",
@@ -47,6 +46,14 @@
       "category": "Salario",
       "transactionType": "deposit",
       "date": "31/05/2025"
+    },
+    {
+      "id": "c644",
+      "title": "Decimo terceiro",
+      "price": 9000,
+      "category": "Financa",
+      "transactionType": "deposit",
+      "date": "02/06/2025"
     }
   ]
 }

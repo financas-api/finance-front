@@ -50,8 +50,6 @@ export default function TransactionDetails() {
 
   async function handleUpdateTransaction() {
     try {
-      notify();
-
       await axios.put(`${API_BASE_URL}/transactions/${id}`, {
         title,
         price: Number(price),
@@ -60,6 +58,7 @@ export default function TransactionDetails() {
         date: format(new Date(), "dd/MM/yyyy"),
       });
 
+      notify();
       navigate("/transactions");
     } catch (error) {
       console.error("Erro ao atualizar transação:", error);

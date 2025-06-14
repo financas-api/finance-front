@@ -5,10 +5,18 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
+import { useTransactionContext } from "../contexts/TransactionContext";
 
 function TransactionsPage() {
   const [allTransactions, setAllTransactions] = useState([]);
   const [open, setOpen] = useState(false);
+
+  const { incrementTransactionCount } = useTransactionContext();
+
+  useEffect(() => {
+    incrementTransactionCount();
+  }, [])
+  console.log(incrementTransactionCount);
 
   const navigate = useNavigate();
 

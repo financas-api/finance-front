@@ -13,15 +13,16 @@
       "price": 21000,
       "category": "FINANCAS",
       "transactionType": "deposit",
+      "date": "07/06/2025",
       "id": "5cce"
     },
     {
-      "id": "fbea",
       "title": "Prime Video",
       "price": 20,
       "category": "Entretenimento",
       "transactionType": "withdraw",
-      "date": "17/05/2025"
+      "date": "07/06/2025",
+      "id": "fbea"
     },
     {
       "id": "950a",

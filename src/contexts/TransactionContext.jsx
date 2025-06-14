@@ -1,7 +1,9 @@
 // Criando context de transações
 
+import axios from "axios";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../utils/constants";
 
 const TransactionContext = createContext();
 const useTransactionContext = () => useContext(TransactionContext);
@@ -31,6 +33,16 @@ const TransactionProvider = ({ children }) => {
   function handleEditTransaction(id) {
     navigate("/transactions/" + id);
   }
+
+  async function handleDeleteTransaction(id) {
+    const confirmDelete = window.confirm("Deseja realmente excluir esta transação?");
+    
+    if (!confirmDelete) {
+      return;
+    }
+
+    await axios.delete(`${API_BASE_URL}/transactions/${id}`);
+  }
   
   return (
     <TransactionContext.Provider
@@ -41,6 +53,7 @@ const TransactionProvider = ({ children }) => {
         depositsResult,
         withdrawsResult,
         total,
+        handleDeleteTransaction,
       }}
     >
       {children}

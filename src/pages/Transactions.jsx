@@ -1,4 +1,4 @@
-import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar } from "phosphor-react";
+import { ArrowCircleDown, ArrowCircleUp, CurrencyDollar, TrashSimple } from "phosphor-react";
 import CardTransaction from "../components/CardTransaction/CardTransaction";
 import ModalNewTransaction from "../components/ModalNewTransaction/ModalNewTransaction";
 import axios from "axios";
@@ -16,6 +16,7 @@ function TransactionsPage() {
     depositsResult,
     withdrawsResult,
     total,
+    handleDeleteTransaction
   } = useTransactionContext();
 
   console.log(allTransactions);
@@ -96,10 +97,10 @@ function TransactionsPage() {
                         className="text-blue-500 hover:text-blue-700"
                         onClick={(e) => {
                           e.stopPropagation();
-                          console.log("Edit transaction", transaction.id);
+                          handleDeleteTransaction(transaction.id);
                         }}
                       >
-                        Excluir
+                        <TrashSimple size={32} weight="fill" />
                       </button>
                     </td>
                   </tr>

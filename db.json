@@ -15,22 +15,6 @@
       "transactionType": "withdraw",
       "date": "07/06/2025",
       "id": "8bca"
-    },
-    {
-      "id": "5b39",
-      "title": "Aumento de salario",
-      "price": 1200,
-      "category": "Salario",
-      "transactionType": "deposit",
-      "date": "31/05/2025"
-    },
-    {
-      "id": "c644",
-      "title": "Decimo terceiro",
-      "price": 9000,
-      "category": "Financa",
-      "transactionType": "deposit",
-      "date": "02/06/2025"
     }
   ]
 }

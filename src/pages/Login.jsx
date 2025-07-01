@@ -5,8 +5,8 @@ import Button from "../components/Button/Button";
 function LoginPage() {
   let navigate = useNavigate();
 
-  function handleSubmit() {
-    navigate("/transactions");
+  function handleLogin() {
+    navigate("/dashboard");
   }
 
   return (
@@ -95,7 +95,7 @@ function LoginPage() {
             </div>
 
             {/* Botão */}
-            <Button onClick={handleSubmit}>Sign In</Button>
+            <Button onClick={handleLogin}>Sign In</Button>
           </main>
         </form>
       </div>

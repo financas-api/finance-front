@@ -6,11 +6,25 @@ import {
   TrashSimple,
 } from "phosphor-react";
 import Modal from "../components/Modal/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
+import axios from "axios";
 
-function DashbordPage() {
+ function DashbordPage() {
   const [open, setOpen] = useState(false);
+  const [transactions, setTransactions] = useState([]);
+
+  console.log(transactions);
+  async function getTransactions() {
+    const transactionsData = await axios.get("http://localhost:3000/transactions");
+
+    setTransactions(transactionsData.data);
+
+  }
+  useEffect(() => {
+    getTransactions();
+  }, []);
+  // getTransactions();
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
@@ -52,13 +66,15 @@ function DashbordPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              <tr className="hover:bg-gray-50 bg-white">
-                <td className="px-6 py-4">Exemplo 1</td>
+             {transactions.map((transaction) => {
+              return (
+                 <tr className="hover:bg-gray-50 bg-white">
+                <td className="px-6 py-4">{transaction.title}</td>
                 <td className="px-6 py-4 text-green-500 font-medium">
-                  R$ 1.000,00
+                  {transaction.price}
                 </td>
-                <td className="px-6 py-4">Teste</td>
-                <td className="px-6 py-4">23/06/2025</td>
+                <td className="px-6 py-4">{transaction.category}</td>
+                <td className="px-6 py-4">{transaction.date}</td>
                 <td className="px-6 py-4">
                   <button className="text-blue-500 hover:text-blue-700">
                     <TrashSimple
@@ -69,6 +85,8 @@ function DashbordPage() {
                   </button>
                 </td>
               </tr>
+              );
+             })}
             </tbody>
           </table>
         </div>

@@ -15,6 +15,36 @@
       "transactionType": "withdraw",
       "date": "07/06/2025",
       "id": "8bca"
+    },
+    {
+      "id": "6d47",
+      "title": "Felicio",
+      "price": "1000",
+      "transitionType": "input",
+      "category": "Educação"
+    },
+    {
+      "id": "bb33",
+      "title": "Escola",
+      "price": "2000",
+      "transitionType": "input",
+      "category": "Educação"
+    },
+    {
+      "id": "1358",
+      "title": "Felicio",
+      "price": "200000",
+      "transitionType": "input",
+      "category": "Educação",
+      "date": "07/07/2025"
+    },
+    {
+      "id": "ffaa",
+      "title": "",
+      "price": "",
+      "transitionType": "input",
+      "category": "",
+      "date": "07/07/2025"
     }
   ]
 }

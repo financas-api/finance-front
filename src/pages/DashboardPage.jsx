@@ -5,6 +5,7 @@ import {
   CurrencyDollar,
   TrashSimple,
 } from "phosphor-react";
+
 import Modal from "../components/Modal/Modal";
 import { useEffect, useState } from "react";
 import Card from "../components/Card/Card";

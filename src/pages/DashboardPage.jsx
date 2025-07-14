@@ -25,7 +25,10 @@ function DashbordPage() {
   useEffect(() => {
     getTransactions();
   }, []);
-  // getTransactions();
+  
+  function handleDeleteTransaction(id) {
+    console.log(id);
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
@@ -77,11 +80,12 @@ function DashbordPage() {
                     <td className="px-6 py-4">{transaction.category}</td>
                     <td className="px-6 py-4">{transaction.date}</td>
                     <td className="px-6 py-4">
-                      <button className="text-blue-500 hover:text-blue-700">
+                      <button className="text-blue-500 hover:text-blue-700 cursor-pointer">
                         <TrashSimple
                           size={24}
                           weight="fill"
                           className="text-red-500"
+                          onClick={() => handleDeleteTransaction(transaction.id)}
                         />
                       </button>
                     </td>

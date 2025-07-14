@@ -28,6 +28,7 @@ function DashbordPage() {
   
   function handleDeleteTransaction(id) {
     console.log(id);
+    axios.delete
   }
 
   return (

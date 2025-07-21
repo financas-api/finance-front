@@ -10,6 +10,8 @@ import Modal from "../components/Modal/Modal";
 import { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
 import axios from "axios";
+import { API_BASE_URL } from "../utils/constants";
+import DropdownOptions from "../components/DropdownOptions/DropdownOptions";
 
 function DashbordPage() {
   const [open, setOpen] = useState(false);
@@ -25,11 +27,27 @@ function DashbordPage() {
   useEffect(() => {
     getTransactions();
   }, []);
-  
-  function handleDeleteTransaction(id) {
-    console.log(id);
-    axios.delete
+
+  async function handleDeleteTransaction(id) {
+    // Pop up de confirmação
+    const confirm = window.confirm("Tem certeza que deseja excluir esta transação?");
+
+    if (confirm === false) {
+      return;
+    }
+
+    await axios.delete(API_BASE_URL + `/transactions/${id}`);
   }
+
+  const allInputsSum = transactions.filter((transaction) => transaction.transitionType === "input").reduce((prev, curr) => {
+    return prev + parseFloat(curr.price);
+  }, 0);
+
+  const allOutputsSum = transactions.filter((transaction) => transaction.transitionType === "output").reduce((prev, curr) => {
+    return prev + parseFloat(curr.price);
+  }, 0);
+
+  const total = allInputsSum - allOutputsSum;
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
@@ -45,13 +63,20 @@ function DashbordPage() {
             Nova transação
           </button>
         </div>
+
+        <div className="flex justify-end pt-4 md:mt-0">
+          <DropdownOptions />
+        </div>
+
       </header>
       <main className="flex-1 container mx-auto py-8 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 -mt-24">
 
-          <Card title="Entradas" icon={<ArrowCircleUp className="text-green-500" size={32} />} amount="R$ 0,00" bgColor="bg-white" />
-          <Card title="Saídas" icon={<ArrowCircleDown className="text-red-500" size={32} />} amount="R$ 0,00" bgColor="bg-white" />
-          <Card title="Total" icon={<CurrencyDollar size={32} />} amount="R$ 0,00" bgColor="bg-emerald-500" textColor="text-white" />
+          <Card title="Entradas" icon={<ArrowCircleUp className="text-green-500" size={32} />} amount={allInputsSum} bgColor="bg-white" />
+
+          <Card title="Saídas" icon={<ArrowCircleDown className="text-red-500" size={32} />} amount={allOutputsSum} bgColor="bg-white" />
+
+          <Card title="Total" icon={<CurrencyDollar size={32} />} amount={total} bgColor="bg-emerald-500" textColor="text-white" />
 
 
 

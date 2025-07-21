@@ -6,7 +6,7 @@ function Card({ title = "Entradas", icon, amount, bgColor, textColor  }) {
         <span>{title}</span>
         {icon}
       </div>
-      <strong className="text-3xl font-medium mt-1">{amount}</strong>
+      <strong className="text-3xl font-medium mt-1">{amount.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</strong>
     </div>
   );
 }

@@ -1,29 +1,6 @@
 {
   "transactions": [
     {
-      "id": "950a",
-      "title": "Curso",
-      "price": 2500,
-      "category": "Educação",
-      "transactionType": "withdraw",
-      "date": "17/05/2025"
-    },
-    {
-      "title": "Café em barras de ouro",
-      "price": 908,
-      "category": "Alimentacao",
-      "transactionType": "withdraw",
-      "date": "07/06/2025",
-      "id": "8bca"
-    },
-    {
-      "id": "6d47",
-      "title": "Felicio",
-      "price": "1000",
-      "transitionType": "input",
-      "category": "Educação"
-    },
-    {
       "id": "bb33",
       "title": "Escola",
       "price": "2000",
@@ -39,12 +16,12 @@
       "date": "07/07/2025"
     },
     {
-      "id": "ffaa",
-      "title": "",
-      "price": "",
+      "id": "5ca2",
+      "title": "Salario",
+      "price": "90000",
       "transitionType": "input",
-      "category": "",
-      "date": "07/07/2025"
+      "category": "Entrada",
+      "date": "14/07/2025"
     }
   ]
 }

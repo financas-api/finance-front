@@ -28,21 +28,6 @@ Permite visualizar, cadastrar e acompanhar transações integradas com a **API D
 
 ---
 
-## 🧩 Estrutura do Projeto
-
-digital-money-front/
-│
-├── src/
-│ ├── components/ → Componentes reutilizáveis (Header, Cards, Inputs, etc.)
-│ ├── pages/ → Páginas principais (Login, Register, Dashboard, Transactions)
-│ ├── services/ → Configuração do Axios e integração com a API
-│ ├── hooks/ → Lógica e estados compartilhados
-│ ├── App.jsx → Configuração das rotas principais
-│ └── main.jsx → Ponto de entrada da aplicação
-│
-├── public/
-├── package.json
-└── README.md
 
 
 ---
